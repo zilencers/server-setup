@@ -1,7 +1,7 @@
 #!/bin/bash
 
-ARCH_PKGS="podman cockpit cockpit-podman"
-FEDORA_PKGS="podman cockpit cockpit-podman zfs"
+ARCH_PKGS="podman cockpit cockpit-podman git"
+FEDORA_PKGS="cockpit cockpit-podman podman git zfs"
 
 abnormal_exit() {
    echo "Error: $1"
@@ -42,7 +42,10 @@ case $DISTRO in
       ;;
 esac
 
-# Get docker image
+# Get container images
+podman pull plexinc/pms-docker
+podman pull pihole/pihole
+
 
 
 
